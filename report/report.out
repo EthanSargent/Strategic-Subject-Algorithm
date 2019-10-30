@@ -1,0 +1,28 @@
+\BOOKMARK [1][-]{section.1}{Statement of Intent}{}% 1
+\BOOKMARK [1][-]{section.2}{Table of Contents}{}% 2
+\BOOKMARK [1][-]{section.3}{Exploratory Data Analysis}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{A word on the dataset}{section.3}% 4
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Missing values}{subsection.3.1}% 5
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Preprocessing}{subsection.3.1}% 6
+\BOOKMARK [2][-]{subsection.3.2}{The distributions of SSL score and its 8 predictor variables}{section.3}% 7
+\BOOKMARK [3][-]{subsubsection.3.2.1}{SSL scores: a summary}{subsection.3.2}% 8
+\BOOKMARK [2][-]{subsection.3.3}{Exploring a model of PREDICTOR RAT TREND IN CRIMINAL ACTIVITY}{section.3}% 9
+\BOOKMARK [3][-]{subsubsection.3.3.1}{The distribution of TREND}{subsection.3.3}% 10
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Comparing TREND to the SSA's unused fields}{subsection.3.3}% 11
+\BOOKMARK [3][-]{subsubsection.3.3.3}{LATEST DATE vs. TREND}{subsection.3.3}% 12
+\BOOKMARK [3][-]{subsubsection.3.3.4}{Arrest counts and TREND:}{subsection.3.3}% 13
+\BOOKMARK [3][-]{subsubsection.3.3.5}{Recent arrest dates and TREND:}{subsection.3.3}% 14
+\BOOKMARK [2][-]{subsection.3.4}{Age}{section.3}% 15
+\BOOKMARK [3][-]{subsubsection.3.4.1}{The relationship between AGE CURR and PREDICTOR RAT AGE AT LATEST ARREST}{subsection.3.4}% 16
+\BOOKMARK [2][-]{subsection.3.5}{Location}{section.3}% 17
+\BOOKMARK [2][-]{subsection.3.6}{Race and gender}{section.3}% 18
+\BOOKMARK [2][-]{subsection.3.7}{Gang affiliation}{section.3}% 19
+\BOOKMARK [1][-]{section.4}{Modeling SSL score}{}% 20
+\BOOKMARK [2][-]{subsection.4.1}{Summary}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.2}{Predictor Multicollinearity}{section.4}% 22
+\BOOKMARK [2][-]{subsection.4.3}{Predictor Strengths}{section.4}% 23
+\BOOKMARK [1][-]{section.5}{Modeling Trend}{}% 24
+\BOOKMARK [2][-]{subsection.5.1}{Preprocessing}{section.5}% 25
+\BOOKMARK [3][-]{subsubsection.5.1.1}{0 substitution}{subsection.5.1}% 26
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Slope substitution}{subsection.5.1}% 27
+\BOOKMARK [2][-]{subsection.5.2}{Summary}{section.5}% 28

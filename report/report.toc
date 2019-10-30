@@ -1,0 +1,29 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Statement of Intent}{2}{section.1}
+\contentsline {section}{\numberline {2}Table of Contents}{3}{section.2}
+\contentsline {section}{\numberline {3}Exploratory Data Analysis}{4}{section.3}
+\contentsline {subsection}{\numberline {3.1}A word on the dataset}{4}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Missing values}{4}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Preprocessing}{4}{subsubsection.3.1.2}
+\contentsline {subsection}{\numberline {3.2}The distributions of SSL score and its 8 predictor variables}{4}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}SSL scores: a summary}{5}{subsubsection.3.2.1}
+\contentsline {subsection}{\numberline {3.3}Exploring a model of \texttt {PREDICTOR RAT TREND IN CRIMINAL ACTIVITY}}{6}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}The distribution of \texttt {TREND}}{6}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Comparing \texttt {TREND} to the SSA's unused fields}{7}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}\texttt {LATEST DATE} vs. \texttt {TREND}}{8}{subsubsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.4}Arrest counts and \texttt {TREND}:}{9}{subsubsection.3.3.4}
+\contentsline {subsubsection}{\numberline {3.3.5}Recent arrest dates and \texttt {TREND}:}{9}{subsubsection.3.3.5}
+\contentsline {subsection}{\numberline {3.4}Age}{10}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}The relationship between \texttt {AGE CURR} and \texttt {PREDICTOR RAT AGE AT LATEST ARREST}}{11}{subsubsection.3.4.1}
+\contentsline {subsection}{\numberline {3.5}Location}{12}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Race and gender}{12}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.7}Gang affiliation}{13}{subsection.3.7}
+\contentsline {section}{\numberline {4}Modeling SSL score}{14}{section.4}
+\contentsline {subsection}{\numberline {4.1}Summary}{14}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Predictor Multicollinearity}{14}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Predictor Strengths}{15}{subsection.4.3}
+\contentsline {section}{\numberline {5}Modeling Trend}{16}{section.5}
+\contentsline {subsection}{\numberline {5.1}Preprocessing}{16}{subsection.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}$0$ substitution}{16}{subsubsection.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.2}Slope substitution}{17}{subsubsection.5.1.2}
+\contentsline {subsection}{\numberline {5.2}Summary}{17}{subsection.5.2}

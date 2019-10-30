@@ -1,0 +1,42 @@
+%Add PDF in and Uncomment
+%\includepdf[pages=1]{Final/1_Writing/Draft_3.pdf}
+%\includepdf[pages=2]{Final/1_Writing/Draft_3.pdf}
+%\includepdf[pages=3]{Final/1_Writing/Draft_3.pdf}
+Overall, our model of \texttt{TREND} was less successful. There is good reason to believe this is due to lack of data. In \cite{factsheet}, which describes the CVRM, an algorithm which has replaced the SSA but takes many of the same inputs including \texttt{TREND}, the authors write that "the 'trend' variable is the slope of a line obtained by a least-squares fit to the individual’s numbers of arrests each year for the past four years." If the trend variable is computed in the same way for the SSL, then the necessary data to compute it is absent from the SSL; in particular, the SSL only contains the year of a subject's most recent arrest, by arrest type, and their arrest count, by arrest type.\\\\
+Our pessimism assumes that the trend variables are computed in the same way for the SSL, which may not be the case - if trend is computed strictly from arrests as with the CVRM, it is difficult to see why, for instance, according to the SSL, a man over 60 with no arrests on record has a \texttt{TREND} of $1.2$, which puts him in the $99$th percentile for that variable. Yet we saw in (3.4) that the SSL has non-predictor fields that are internally inconsistent for specific subjects - it is certainly possible that arrest data is not updated properly in the non-predictive fields.\\\\
+In sum, the evidence of missing data and the unreliability of the non-predictive entries of the SSL mean that we do not devote as much time and analysis to a model of \texttt{TREND}.
+\subsection{Preprocessing}
+Recall that our model of \texttt{trend} used 8 fields in addition to the 8 predictor fields of SSL score, and that $75.8$\% of the entries in these additional fields were \texttt{NaN}.\\\\
+If an arrest count field, for instance \texttt{NARCOTIC ARR CNT}, is $\texttt{NaN}$, we assume that the subject has does not have a narcotics arrest on record, and we substitute $0$. However, interpreting a time-sensitive fields like \texttt{LATEST DATE} of police contact requires more subtlety. We employed two different strategies for representing these fields as inputs to regression models.
+\subsubsection{$0$ substitution}
+ We want to preserve distance between values like $2015$ and $2016$, while also ensuring that a subject's \texttt{TREND} is not affected if they have no \texttt{LATEST DATE} - a subject with no police contact is not becoming more or less criminally active over time. Substituting $0$ for \texttt{NaN} values satisfies the second criterion but not the first -  a linear regression fitted to points $0$ and $2015$ will not be able to adequately distinguish between $2015$ and $2016$. This substitution may be adequate for a nonlinear model like random forests or \texttt{xgboost}.
+\subsubsection{Slope substitution}
+In the spirit of the definition of \texttt{TREND} in \cite{factsheet}, we re-express a subject's most recent arrest date as the slope of the best fit line through the one-hot encoding for that year, where the encoding spans the years 2012-2016, the four years considered by the model described in \cite{factsheet}. For example, if a subject was arrested in 2015, we substitute the slope of the best-fit line through
+\[
+x=\{2012,2013,2014,2015,2016\}, y=\{0,0,0,1,0\}.
+\]
+For subjects with a \texttt{LATEST DATE} earlier than 2012 (n=5556), say, $y$, we compute the best-fit slope through
+\[
+x=\{y, y+1, \hdots, 2011, \hdots, 2016\}, y=\{1,0, \hdots, 0\}.
+\]
+This substitution has many desirable properties - first, the contribution to \texttt{TREND} of a subject without a recent arrest year is $0$, that is, the slope of the best fit line through the zero vector. Second, recent arrest years have positive slopes which are higher the more recent the year of arrest. Finally, slope tends toward $0$ as  arrest year decreases. A subject's total $\texttt{TREND}$ will be a weighted combination of the subject's slope for each time-sensitive input - \texttt{LATEST DATE}, \texttt{LATEST NARCOTIC ARR DATE}, \texttt{LATEST DOMESTIC ARR DATE}, \texttt{LATEST WEAPON ARR DATE}, and \texttt{SSL LAST PTV DATE} - together with the other inputs.
+\subsection{Summary}
+Below is a summary of various models of \texttt{TREND}. The random model computes the root-mean-squared error of the difference between the \texttt{TREND} labels and a bootstrap replicate of the \texttt{TREND} labels. A cross-validated random forests regression without a slope substitution is the best performing model.
+\\\\
+\begin{table}[h!]
+\centering
+\begin{tabular}{||c c c c||}
+ \hline
+ Model & Substitution & RMSE & Cross-validated (\texttt{nfolds}$=5$)\\ [0.5ex] 
+ \hline\hline
+Random model & n/a & $0.5726$ & No\\
+\texttt{OLS} & 0 & $0.32786$ & No\\
+\texttt{OLS} & slope & $0.3135$ & No\\
+\texttt{OLS} w/ polynomial features & 0 & $0.2895$ & No\\
+\texttt{OLS} w/ polynomial features & slope & $0.2843$ & No\\
+Random forests & 0 & $0.2832$ & Yes\\
+Random forests & slope & $0.2848$ & Yes\\
+ \hline
+\end{tabular}
+\label{table:2}
+\end{table}

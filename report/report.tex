@@ -1,0 +1,98 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{pdfpages}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{setspace} % for \onehalfspacing and \singlespacing macros
+\onehalfspacing 
+
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+
+\usepackage{etoolbox}
+\AtBeginEnvironment{quote}{\singlespacing\small}
+
+
+\newcommand{\link}[1]{{\color{blue}\href{#1}{#1}}}
+
+
+\geometry{margin=1.5in}
+\title{A REGRESSION ANALYSIS OF THE STRATEGIC SUBJECT LIST\thanks{This work was not supported by any organization. Ethan Sargent graduated from Harvey Mudd College in 2019 with a B.S. in Mathematics. Contact: {\tt esargent at hmc dot edu }}}
+\author{Ethan Sargent}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+ 
+
+\section{Statement of Intent}
+\input{1.tex}
+\include{1.tex}
+\newpage
+
+\section{Table of Contents}
+\tableofcontents
+\newpage
+
+\section{Exploratory Data Analysis}
+\input{3.tex}
+\include{3.tex}
+\newpage
+
+\section{Modeling SSL score}
+\input{4.tex}
+\include{4.tex}
+\newpage
+
+
+\section{Modeling Trend}
+\input{5.tex}
+\include{5.tex}
+\newpage
+
+\begin{thebibliography}{9}
+\bibitem{nyt} 
+J. Asher and R. Arthur, "Inside the Algorithm That Tries to Predict Gun Violence in Chicago."
+New York Times, 13 June 2017;
+\link{https://www.nytimes.com/2017/06/13/upshot/what-an-algorithm-reveals-about-life-on-chicagos-high-risk-list.html}
+
+\bibitem{upturn} 
+B. Posadas, "How strategic is Chicago’s 'Strategic Subjects List'? Upturn investigates."
+Medium, 22 June 2017;
+\link{https://medium.com/equal-future/how-strategic-is-chicagos-strategic-subjects-list-upturn-investigates-9e5b4b235a7c}
+
+\bibitem{data} 
+Chicago Data Portal, 7 December 2017;
+\link{https://data.cityofchicago.org/Public-Safety/Strategic-Subject-List/4aki-r3np}
+
+\bibitem{factsheet}
+"Crime and Victimization Risk Model (CVRM)." Illinois Insitute of Technology, n.d.;
+\link{https://home.chicagopolice.org/wp-content/uploads/2019/01/FACT-SHEET-Crime-and-Victimization-Risk-Model-1.pdf}
+
+\bibitem{directive} 
+"SUBJECT ASSESSMENT AND INFORMATION DASHBOARD (SAID)." Chicago Police Department, 09 January 2019.
+\link{http://directives.chicagopolice.org/directives/data/a7a57b85-155e9f4b-50c15-5e9f-7742e3ac8b0ab2d3.html?hl=true}
+
+\bibitem{crime} 
+"Crime in Chicago: Explore your community." Chicago Tribune, 01 April 2019.
+\link{https://www.chicagotribune.com/news/ct-crime-in-chicago-20171114-storygallery.html}
+
+\bibitem{lawyer}
+"Gun Charge in Illinois FAQs." Robert J. Callahan: Chicago Criminal Defense Attorney, n.d.; \link{https://www.defenselawyersite.com/gun-charge-in-illinois-faqs/}
+
+\bibitem{sun-times}
+M. Dumke and F. Main, "A look inside the watch list Chicago police fought to keep secret." Chicago Sun Times, 18 May 2017.
+\link{https://chicago.suntimes.com/2017/5/18/18386116/a-look-inside-the-watch-list-chicago-police-fought-to-keep-secret}
+
+\end{thebibliography}
+
+
+\end{document}
+

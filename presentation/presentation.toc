@@ -1,0 +1,11 @@
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{History of the SSA}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Previous reporting on the SSA}{5}{0}{1}
+\beamer@sectionintoc {2}{Exploratory Data Analysis}{7}{0}{2}
+\beamer@subsectionintoc {2}{1}{The SSL}{7}{0}{2}
+\beamer@subsectionintoc {2}{2}{Predictors and their distributions}{9}{0}{2}
+\beamer@subsectionintoc {2}{3}{The predictor \texttt {TREND IN CRIMINAL ACTIVITY}}{11}{0}{2}
+\beamer@subsectionintoc {2}{4}{Location, race, and gender}{13}{0}{2}
+\beamer@sectionintoc {3}{Models}{16}{0}{3}
+\beamer@subsectionintoc {3}{1}{Modeling SSL score}{16}{0}{3}
+\beamer@subsectionintoc {3}{2}{Modeling \texttt {TREND}}{20}{0}{3}
