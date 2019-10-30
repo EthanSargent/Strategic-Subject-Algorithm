@@ -1,2 +1,2 @@
 # Strategic-Subject-Algorithm
-A regression analysis of the Chicago Police Department's strategic subject algorithm. For an in-depth report, see the file report.pdf in the report folder. For a slide deck, see the presentation folder. Exploratory data analysis was done in EDA.ipynb, and all my modeling was done in regression.ipynb.
+A regression analysis of the Chicago Police Department's strategic subject algorithm. For more information, see my [report](report/report.pdf). For a slide deck, see my [presentation](presentation/presentation.pdf). My code is divided into [exploratory data analysis](EDA.ipynb), and [modeling](regression.ipynb).
